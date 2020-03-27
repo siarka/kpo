@@ -46,14 +46,17 @@ int main(int argc, char **argv)
     odpop=Oblicz(WyrZ_PytanieTestowe);
 
     if(cin.fail()){
+
       zlepkt++;
-      cout<<"Blad. Prawidlowym wynikiem jest:"<<odpop<<endl;
+      cout<<"Zle poprawna odpowied to "<<odpop<<endl;
+    
     }else{
 
       if(odpop.im == odpu.im && odpu.re == odpop.re)
       { 
         cout<<"dobrze"<<endl;
-        pkt++;     
+        pkt++;
+             
       }else{
     
        cout<<"Zle poprawna odpowied to "<<odpop<<endl;
