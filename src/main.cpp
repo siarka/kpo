@@ -48,15 +48,17 @@ int main(int argc, char **argv)
     if(cin.fail()){
 
       zlepkt++;
-      cout<<"Zle poprawna odpowied to "<<odpop<<endl;
-    
+
+      cout<<endl;
+      cin.clear();
+     // cin>>odpu;
     }else{
 
       if(odpop.im == odpu.im && odpu.re == odpop.re)
       { 
         cout<<"dobrze"<<endl;
         pkt++;
-             
+
       }else{
     
        cout<<"Zle poprawna odpowied to "<<odpop<<endl;

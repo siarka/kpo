@@ -77,46 +77,27 @@ LZespolona  operator / (LZespolona  Skl1,  LZespolona  Skl2)
 
 
 istream& operator>>(istream& StrmWe, LZespolona& Lz){
-  int l = 1;
-  char niep;
-  
+  char n;
+for( int i = 0; i < 4; i++){
+
+if(i!=0)
+{
   StrmWe.clear();
-  cout<<"Twoja odpowiedz: ";
+cerr<<"nie poprawna skladnia "<<endl;
+}
 
-  StrmWe >> niep;
-  if(niep != '('){StrmWe.setstate(ios::failbit);}
-  StrmWe >> Lz.re >> Lz.im;
-  StrmWe >> niep;
-  if(niep != 'i'){StrmWe.setstate(ios::failbit);}
-  StrmWe >> niep;
-  if(niep != ')'){StrmWe.setstate(ios::failbit);}
-  StrmWe.ignore();
+   //StrmWe >> n;
+StrmWe.ignore( );
+ StrmWe >> Lz.re; 
+ StrmWe >> Lz.im;
+StrmWe.ignore( );
+ StrmWe >> n;
+
+}
 
 
 
-  while(StrmWe.fail()){
-  cerr<<"Blad formatu liczby zespolonej sprobuj ponownie"<<endl;
-    if(l == 3){
-      return StrmWe;
-    }
-
-    StrmWe.clear();
-    StrmWe.ignore(1000, '\n');
-
-    
-
-    StrmWe >> niep;
-    if(niep != '('){StrmWe.setstate(ios::failbit);}
-    StrmWe >> Lz.re >> Lz.im;
-    StrmWe >> niep;
-    if(niep != 'i'){StrmWe.setstate(ios::failbit);}
-    StrmWe >> niep;
-    if(niep != ')'){StrmWe.setstate(ios::failbit);}
-    StrmWe.ignore();
-
-    cout<<endl;
-
-    l++;
-  }
-  return StrmWe;
+  
+ 
+ return StrmWe;
 }
